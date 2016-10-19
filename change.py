@@ -41,6 +41,8 @@ if (error != 1):
 	for i in range(0,len(arrayOfArrays),2):
 		changedp(arrayOfArrays[i],arrayOfArrays[i+1][0])
 
+	print 'branch test'
+
 
 
 
