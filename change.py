@@ -4,6 +4,9 @@
 #Nicholas Vrontakis
 #Project 2 CS325 
 
+# Call the program with one arguement (formatted .txt file) example: >>python change.py Amount.txt
+# will print results to [userinput]change.txt in same directory
+
 # sys for the -i file
 import sys
 from changedpFunction import changedp
@@ -14,7 +17,7 @@ fileInput = sys.argv[1]
 error = 0
 #tiny bit of input validation
 try:
-	fo = open(fileInput,"r")
+	fi = open(fileInput,"r")
 except IOError:
 	error = 1
 	print('cannot open',fileInput)
@@ -24,7 +27,7 @@ if (error != 1):
 	#store very input line as array of arrays
 	arrayOfArrays = []
 
-	for line in fo:
+	for line in fi:
 		#ignore blank lines
 		if not line.strip():
 			garbage = 1 #why do you have to have something here? Does anybody have suggestions for parsing? 
@@ -37,11 +40,26 @@ if (error != 1):
 			array = [int(x) for x in line.split(",")]
 			#make array of arrays for use in all 4 algorithms. 
 			arrayOfArrays.append(array)
+	fi.close()
+
+	fileOutput = fileInput[:len(fileInput)-4] + 'change.txt'
+
+
+	fo = open(fileOutput,"w+")
 
 	for i in range(0,len(arrayOfArrays),2):
-		changedp(arrayOfArrays[i],arrayOfArrays[i+1][0])
+		change,numCoins = changedp(arrayOfArrays[i],arrayOfArrays[i+1][0])
+		fo.write(change + '\n') 
+		fo.write(numCoins + '\n')
 
-	print 'final branch test'
+	
+	fo.close()
+
+	print 'results in ' + fileOutput
+
+
+
+	
 
 
 

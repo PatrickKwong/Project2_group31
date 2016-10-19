@@ -25,5 +25,8 @@ def changedp(coinValueList,change):
    while (denomIndex > 0):
     solutionList.append(coinsUsed[denomIndex])
     denomIndex -= coinsUsed[denomIndex]
-   print "Num coins: " + str(minCoins[change]) # min number of total coins will be last element of min array (n)
-   print "Coins used: " + str(solutionList)  #print solutions
+  
+
+   return str(solutionList),str(minCoins[change])
+   # print "Num coins: " + str(minCoins[change]) # min number of total coins will be last element of min array (n)
+   # print "Coins used: " + str(solutionList)  #print solutions
