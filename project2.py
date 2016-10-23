@@ -25,6 +25,7 @@ def load_problems(filename):
 				coins = [int(num) for num in coins.replace('[', '')
 					.replace(']', '')
 					.replace(' ', '')
+					.replace('\n', '')
 					.split(',') if num not in '\n']
 			else:
 				break

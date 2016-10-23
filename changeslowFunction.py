@@ -40,8 +40,7 @@ def changeslow(V, A):
 				if m > m_temp:
 					C = C_temp
 					m = m_temp
-
-	return C, m
+		return C, m
 
 # testing function be messing with the main project file and loading problems from the text file.
 # array V coin denominations
@@ -76,5 +75,16 @@ def main():
 	C, m = changeslow(V, A)
 	print C
 	print m
+
+	V = [1, 5, 10, 25]
+	A = 56
+	print V
+	print A
+
+	C, m = changeslow(V, A)
+	print C
+	print m
+
+
 
 if __name__ == "__main__": main()
