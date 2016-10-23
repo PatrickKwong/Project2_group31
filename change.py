@@ -1,14 +1,16 @@
 #!/usr/bin/python
-#Cas Donoghue
-#Patrick Kwong
-#Nicholas Vrontakis
-#Project 2 CS325
+# Cas Donoghue
+# Patrick Kwong
+# Nicholas Vrontakis
+# Group 31
+# Project 2 CS325
 
 # Call the program with one arguement (formatted .txt file) example: >>python change.py Amount.txt
 # will print results to [userinput]change.txt in same directory
 
 # sys for the -i file
 import sys
+from changeslowFunction import changeslow
 from changedpFunction import changedp
 from change_greedy import get_change
 
@@ -43,12 +45,14 @@ if (error != 1):
 
 	fileOutput = fileInput[:len(fileInput)-4] + 'change.txt'
 
-        with open(fileOutput,"w+") as fo:
-                for i in range(0,len(arrayOfArrays),2):
-		        change, numCoins = get_change(arrayOfArrays[i],arrayOfArrays[i+1][0])
-		        fo.write("Greedy Approach\n{0}\n{1}\n".format(change, numCoins))
-		        change, numCoins = changedp(arrayOfArrays[i],arrayOfArrays[i+1][0])
-		        fo.write("Dynamic Programming Approach\n{0}\n{1}\n".format(change, numCoins))
+	with open(fileOutput,"w+") as fo:
+		for i in range(0,len(arrayOfArrays),2):
+			change, numCoins = get_change(arrayOfArrays[i],arrayOfArrays[i+1][0])
+			fo.write("Algorithm changeslow:\n{0}\n{1}\n".format(change, numCoins))
+			change, numCoins = get_change(arrayOfArrays[i],arrayOfArrays[i+1][0])
+			fo.write("Algorithm changegreedy:\n{0}\n{1}\n".format(change, numCoins))
+			change, numCoins = changedp(arrayOfArrays[i],arrayOfArrays[i+1][0])
+			fo.write("Algorithm changedp:\n{0}\n{1}\n".format(change, numCoins))
 
 	print 'results in ' + fileOutput
 	print 'branch test'
