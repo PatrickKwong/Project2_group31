@@ -10,6 +10,7 @@
 # sys for the -i file
 import sys
 from changedpFunction import changedp
+from change_greedy import get_change
 
 #store file input
 fileInput = sys.argv[1]
@@ -44,9 +45,10 @@ if (error != 1):
 
         with open(fileOutput,"w+") as fo:
                 for i in range(0,len(arrayOfArrays),2):
-		        change,numCoins = changedp(arrayOfArrays[i],arrayOfArrays[i+1][0])
-		        fo.write(change + '\n')
-		        fo.write(numCoins + '\n')
+		        change, numCoins = get_change(arrayOfArrays[i],arrayOfArrays[i+1][0])
+		        fo.write("Greedy Approach\n{0}\n{1}\n".format(change, numCoins))
+		        change, numCoins = changedp(arrayOfArrays[i],arrayOfArrays[i+1][0])
+		        fo.write("Dynamic Programming Approach\n{0}\n{1}\n".format(change, numCoins))
 
 	print 'results in ' + fileOutput
 	print 'branch test'
