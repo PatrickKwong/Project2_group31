@@ -5,9 +5,10 @@
 #Nicholas Vrontakis
 #CS325 Project 2 Algorithm 1: Divide and Conquer Algorithm
 
+
 # Divide and Conquer Algorithm
 # Source: divide and conquer algorithm from provided CS325Project2FA16.pdf 
-#
+
 # input
 # array V coin denominations
 # value A amount of change we are asked to make
@@ -34,7 +35,7 @@ def changeslow(V, A):
 				C_temp, m_temp = changeslow(V, A - V[i])
 				C_temp[i] += 1
 				m_temp += 1
-				
+
 				# check if the new m_temp is smaller existing m, if so record the new C and m
 				if m > m_temp:
 					C = C_temp
@@ -42,7 +43,7 @@ def changeslow(V, A):
 
 	return C, m
 
-# testing
+# testing function be messing with the main project file and loading problems from the text file.
 # array V coin denominations
 # value A amount of change we are asked to make
 # array C coin denominations count used to make change
