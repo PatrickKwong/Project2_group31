@@ -51,8 +51,8 @@ def changeslow(V, A):
 def main():
 	V = [1, 3, 7, 26]
 	A = 22
-	print V
-	print A
+	print 'V: ', V 
+	print 'A: ', A
 
 	C, m = changeslow(V, A)
 	print C
@@ -60,8 +60,8 @@ def main():
 
 	V = [1, 2, 5]
 	A = 10
-	print V
-	print A
+	print 'V: ', V 
+	print 'A: ', A
 
 	C, m = changeslow(V, A)
 	print C
@@ -69,22 +69,51 @@ def main():
 
 	V = [1, 2, 5, 10]
 	A = 10
-	print V
-	print A
+	print 'V: ', V 
+	print 'A: ', A
 
 	C, m = changeslow(V, A)
 	print C
 	print m
 
+	# this is slow
 	V = [1, 5, 10, 25]
 	A = 56
-	print V
-	print A
+	print 'V: ', V 
+	print 'A: ', A
 
 	C, m = changeslow(V, A)
 	print C
 	print m
 
+	# Testing for correctness
+
+	V = [1, 2, 4, 8]
+	A = 15
+	print 'V: ', V 
+	print 'A: ', A
+
+	C, m = changeslow(V, A)
+	print C
+	print m
+
+	V = [1, 3, 7, 12]
+	A = 29
+	print 'V: ', V 
+	print 'A: ', A
+
+	C, m = changeslow(V, A)
+	print C
+	print m
+
+	V = [1, 3, 7, 12]
+	A = 31
+	print 'V: ', V 
+	print 'A: ', A
+
+	C, m = changeslow(V, A)
+	print C
+	print m
 
 
 if __name__ == "__main__": main()
