@@ -1,7 +1,7 @@
 Nicholas Vrontakis, Patrick Kwong, and Cas Donoghue 
 # CS325-400 Group 31 Project 2 README
 
-## Running Program
+## Running the Program
 1. Put the makeChange.py program file in the same directory as your input file.
 2. Run makeChange.py on the command line with your specific [input filename].txt
 
