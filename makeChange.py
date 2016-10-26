@@ -187,12 +187,12 @@ if (error != 1):
 			fo.write("Algorithm changedp:\n{0}\n{1}\n".format(change, numCoins))
                         runtime_data.append(testcase_runtime_data)
 
-	print "thinking..."
-	print 'Results in ' + fileOutput
+	print "Processing..."
+	print 'Results saved to ' + fileOutput
 
 
         if (output_runtime_data):
-        	print 'Runtimd data in runtime_data.csv:'
+        	print 'Runtime data saved to runtime_data.csv:'
                 with open("runtime_data.csv", "w+") as csv_file:
                         csv_writer = csv.writer(csv_file, delimiter=',')
                         for algo_data in runtime_data:
